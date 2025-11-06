@@ -41,9 +41,9 @@ import Account from "./pages/ui/User/Account.jsx";
 import EditAccount from "./pages/ui/User/EditAccount.jsx";
 
 // 🛠 Admin - User
-import AdminUserList from "./pages/admin/user/index.jsx";
-import AdminUserCreate from "./pages/admin/user/create.jsx";
-import AdminUserEdit from "./pages/admin/user/edit.jsx";
+import AdminUserList from "./pages/admin/User/index.jsx";
+import AdminUserCreate from "./pages/admin/User/create.jsx";
+import AdminUserEdit from "./pages/admin/User/edit.jsx";
 
 // 🛠 Admin - TransportCompany
 import AdminTransportCompanyList from "./pages/admin/TransportCompany/index";
