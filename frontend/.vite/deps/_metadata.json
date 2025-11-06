@@ -1,0 +1,76 @@
+{
+  "hash": "127a4ab5",
+  "configHash": "d8555b53",
+  "lockfileHash": "7a85542a",
+  "browserHash": "2d9a6057",
+  "optimized": {
+    "react": {
+      "src": "../../node_modules/react/index.js",
+      "file": "react.js",
+      "fileHash": "c518c30b",
+      "needsInterop": true
+    },
+    "react-dom/client": {
+      "src": "../../node_modules/react-dom/client.js",
+      "file": "react-dom_client.js",
+      "fileHash": "b2007f9a",
+      "needsInterop": true
+    },
+    "react-router-dom": {
+      "src": "../../node_modules/react-router-dom/dist/index.mjs",
+      "file": "react-router-dom.js",
+      "fileHash": "79da6213",
+      "needsInterop": false
+    },
+    "axios": {
+      "src": "../../node_modules/axios/index.js",
+      "file": "axios.js",
+      "fileHash": "14555c89",
+      "needsInterop": false
+    },
+    "react-icons/fa": {
+      "src": "../../node_modules/react-icons/fa/index.mjs",
+      "file": "react-icons_fa.js",
+      "fileHash": "d016a1b3",
+      "needsInterop": false
+    },
+    "lucide-react": {
+      "src": "../../node_modules/lucide-react/dist/esm/lucide-react.js",
+      "file": "lucide-react.js",
+      "fileHash": "94bbb4bf",
+      "needsInterop": false
+    },
+    "react-modal": {
+      "src": "../../node_modules/react-modal/lib/index.js",
+      "file": "react-modal.js",
+      "fileHash": "286329da",
+      "needsInterop": true
+    },
+    "react-leaflet": {
+      "src": "../../node_modules/react-leaflet/lib/index.js",
+      "file": "react-leaflet.js",
+      "fileHash": "cf854fec",
+      "needsInterop": false
+    },
+    "leaflet": {
+      "src": "../../node_modules/leaflet/dist/leaflet-src.js",
+      "file": "leaflet.js",
+      "fileHash": "99bd01be",
+      "needsInterop": true
+    }
+  },
+  "chunks": {
+    "chunk-PML55YSI": {
+      "file": "chunk-PML55YSI.js"
+    },
+    "chunk-XE2STDAP": {
+      "file": "chunk-XE2STDAP.js"
+    },
+    "chunk-D2KY6O3O": {
+      "file": "chunk-D2KY6O3O.js"
+    },
+    "chunk-V4OQ3NZ2": {
+      "file": "chunk-V4OQ3NZ2.js"
+    }
+  }
+}

@@ -1,0 +1,132 @@
+/* Chỉ áp dụng custom scrollbar cho vùng body cuộn của FullCalendar */
+.custom-scrollbar .fc-scroller {
+  scrollbar-width: thin !important;
+  scrollbar-color: #e5e7eb #fff !important;
+}
+
+.custom-scrollbar .fc-scroller::-webkit-scrollbar {
+  width: 3px !important;
+  background: #fff !important;
+}
+.custom-scrollbar .fc-scroller::-webkit-scrollbar-thumb {
+  background: #e5e7eb !important;
+  border-radius: 6px !important;
+}
+.custom-scrollbar .fc-scroller::-webkit-scrollbar-track {
+  background: #fff !important;
+}
+.custom-scrollbar .fc-scroller::-webkit-scrollbar-button,
+.custom-scrollbar .fc-scroller::-webkit-scrollbar-button:single-button {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+  background: transparent !important;
+  opacity: 0 !important;
+}
+
+/* Ẩn thanh cuộn ở header của FullCalendar */
+.custom-scrollbar .fc .fc-scrollgrid-section-header,
+.custom-scrollbar .fc .fc-col-header,
+.custom-scrollbar .fc .fc-col-header-cell,
+.custom-scrollbar .fc .fc-scrollgrid-sync-table {
+  overflow: hidden !important;
+  scrollbar-width: none !important;
+}
+.custom-scrollbar .fc .fc-scrollgrid-section-header::-webkit-scrollbar,
+.custom-scrollbar .fc .fc-col-header::-webkit-scrollbar,
+.custom-scrollbar .fc .fc-col-header-cell::-webkit-scrollbar,
+.custom-scrollbar .fc .fc-scrollgrid-sync-table::-webkit-scrollbar {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+  background: transparent !important;
+}
+
+/* Ép header không cuộn, không chiếm chỗ scrollbar */
+.custom-scrollbar .fc .fc-scrollgrid-section-header,
+.custom-scrollbar .fc .fc-col-header,
+.custom-scrollbar .fc .fc-col-header-cell,
+.custom-scrollbar .fc .fc-scrollgrid-sync-table {
+  overflow: hidden !important;
+  max-height: 100% !important;
+  height: auto !important;
+}
+
+/* Nếu vẫn còn thanh cuộn ảo, thử ép luôn cho table header */
+.custom-scrollbar .fc .fc-scrollgrid-sync-table thead {
+  overflow: hidden !important;
+  max-height: 100% !important;
+  height: auto !important;
+} 
+
+.year-scrollbar::-webkit-scrollbar {
+  width: 6px;
+  background: transparent;
+}
+.year-scrollbar::-webkit-scrollbar-thumb {
+  background: #e5e7eb;
+  border-radius: 6px;
+}
+.year-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+.year-scrollbar::-webkit-scrollbar-button {
+  display: none;
+  height: 0;
+  width: 0;
+} 
+
+/* Gạch ngang cho header ngày trong view tháng */
+.fc-dayGridMonth-view .fc-col-header-cell {
+  border-top: 2px solid #e5e7eb;
+} 
+
+/* Gạch ngang cho mỗi ô ngày trong view tháng - tăng ưu tiên */
+.fc-dayGridMonth-view .fc-daygrid-day,
+.fc-daygrid-day,
+.fc-daygrid-day-frame {
+  border-top: 1px solid #e5e7eb !important;
+}
+
+/* Làm nhỏ ô "Cả ngày" */
+.all-day-slot {
+  height: 40px !important;
+  min-height: 40px !important;
+  max-height: 40px !important;
+}
+
+.all-day-slot .fc-daygrid-day-frame {
+  height: 40px !important;
+  min-height: 40px !important;
+  max-height: 40px !important;
+}
+
+.all-day-slot .fc-daygrid-day-events {
+  height: 40px !important;
+  min-height: 40px !important;
+  max-height: 40px !important;
+}
+
+/* Làm nhỏ event trong ô "Cả ngày" */
+.all-day-slot .fc-event {
+  height: 15px !important;
+  min-height: 15px !important;
+  max-height: 15px !important;
+  margin: 1px 0 !important;
+  padding: 1px 4px !important;
+}
+
+/* Làm nhỏ quickbox trong ô "Cả ngày" */
+.all-day-slot .fc-highlight {
+  height: 15px !important;
+  min-height: 15px !important;
+  max-height: 15px !important;
+  margin: 1px 0 !important;
+}
+
+.all-day-slot .fc-highlight-skeleton {
+  height: 15px !important;
+  min-height: 15px !important;
+  max-height: 15px !important;
+  margin: 1px 0 !important;
+} 

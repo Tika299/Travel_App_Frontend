@@ -1,0 +1,88 @@
+{
+  "name": "frontend",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "start": "react-scripts start",
+    "dev": "vite",
+    "build": "vite build",
+    "lint": "eslint .",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@emoji-mart/data": "^1.2.1",
+    "@fullcalendar/core": "^6.1.18",
+    "@fullcalendar/daygrid": "^6.1.18",
+    "@fullcalendar/interaction": "^6.1.18",
+    "@fullcalendar/react": "^6.1.18",
+    "@fullcalendar/timegrid": "^6.1.18",
+    "@react-google-maps/api": "^2.20.7",
+    "@tailwindcss/line-clamp": "^0.4.4",
+    "@testing-library/dom": "^10.4.0",
+    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/user-event": "^14.5.0",
+    "axios": "^1.10.0",
+    "clsx": "^2.1.1",
+    "date-fns": "^4.1.0",
+    "emoji-mart": "^5.6.0",
+    "leaflet": "^1.9.4",
+    "leaflet.gridlayer.googlemutant": "^0.15.0",
+    "lucide-react": "^0.525.0",
+    "react": "^19.1.0",
+    "react-calendar": "^6.0.0",
+    "react-datepicker": "^8.4.0",
+    "react-dom": "^19.1.0",
+    "react-dropzone": "^14.3.8",
+    "react-hook-form": "^7.60.0",
+    "react-icons": "^5.5.0",
+    "react-leaflet": "^5.0.0",
+    "react-leaflet-google-layer": "^4.0.0",
+    "react-loading-skeleton": "^3.5.0",
+    "react-modal": "^3.16.3",
+    "react-router-dom": "^7.6.2",
+    "react-scripts": "5.0.1",
+    "react-select": "^5.10.2",
+    "react-toastify": "^11.0.5",
+    "react-webcam": "^7.2.0",
+    "react-window": "^1.8.11",
+    "sweetalert2": "^11.22.2",
+    "sweetalert2-react-content": "^5.1.0",
+    "use-places-autocomplete": "^4.0.1",
+    "web-vitals": "^2.1.4"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.25.0",
+    "@tailwindcss/postcss": "^4.1.10",
+    "@types/react": "^19.1.2",
+    "@types/react-dom": "^19.1.2",
+    "@vitejs/plugin-react": "^4.4.1",
+    "autoprefixer": "^10.4.21",
+    "cross-env": "^7.0.3",
+    "eslint": "^9.25.0",
+    "eslint-plugin-react-hooks": "^5.2.0",
+    "eslint-plugin-react-refresh": "^0.4.19",
+    "globals": "^16.0.0",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^3.4.3",
+    "vite": "^6.3.5"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}

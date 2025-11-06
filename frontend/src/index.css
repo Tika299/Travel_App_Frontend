@@ -1,0 +1,410 @@
+@import 'react-calendar/dist/Calendar.css';
+@import "leaflet/dist/leaflet.css";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.react-calendar {
+  border: none;
+  border-radius: 1rem;
+  background: #fff;
+  font-family: inherit;
+  box-shadow: none;
+  padding: 0;
+  width: 100%;
+  max-width: 100%;
+}
+.react-calendar__navigation {
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0.5rem;
+}
+.react-calendar__navigation__label {
+  font-size: 1rem !important;
+  font-weight: 500 !important;
+  color: #222;
+  flex: none;
+  padding: 0 0.25rem;
+}
+.react-calendar__navigation button {
+  min-width: 1.5rem;
+  background: none;
+  font-size: 1.1rem;
+  color: #222;
+  padding: 0 0.25rem;
+}
+.react-calendar__month-view__weekdays {
+  text-align: center;
+  text-transform: none;
+  font-weight: 500;
+  color: #222;
+  font-size: 0.95rem;
+  letter-spacing: 0.01em;
+  background: none;
+}
+.react-calendar__month-view__weekdays__weekday {
+  padding: 0.2em 0;
+  font-weight: 400 !important;
+}
+.react-calendar__month-view__weekdays__weekday abbr {
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+.react-calendar__tile {
+  border-radius: 9999px;
+  padding: 0.25rem 0.1rem;
+  font-size: 0.95rem;
+  color: #222;
+  background: none;
+  font-weight: 400;
+  transition: background 0.2s, color 0.2s;
+}
+.react-calendar__tile--active,
+.react-calendar__tile--now {
+  background: #2563eb !important;
+  color: #fff !important;
+  font-weight: 500;
+}
+.react-calendar__tile--now:not(.react-calendar__tile--active) {
+  background: #2563eb !important;
+  color: #fff !important;
+}
+.react-calendar__tile:enabled:hover {
+  background: #93c5fd !important;
+  color: #1e3a8a !important;
+}
+.react-calendar__month-view__days__day--neighboringMonth {
+  color: #d1d5db !important; /* gray-300 */
+}
+.react-calendar__month-view__days__day--weekend {
+  color: #222 !important;
+}
+
+/* Đảm bảo ô ngày là hình vuông, căn giữa, không bị padding/margin dư, áp dụng cả cho thẻ abbr bên trong */
+.react-calendar__tile,
+.react-calendar__tile abbr {
+  padding: 0 !important;
+  height: 2rem !important;
+  width: 2rem !important;
+  min-width: 2rem !important;
+  min-height: 2rem !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  border-radius: 9999px !important;
+  margin: 0 auto !important;
+  box-sizing: border-box !important;
+}
+
+/* Bỏ hoàn toàn viền của react-calendar */
+.react-calendar,
+.react-calendar *,
+.react-calendar *:before,
+.react-calendar *:after {
+  border: none !important;
+  box-shadow: none !important;
+}
+
+/* Loại bỏ hoàn toàn viền ngoài của FullCalendar */
+.fc-theme-standard .fc-scrollgrid,
+.fc-theme-standard td,
+.fc-theme-standard th,
+.fc-theme-standard .fc-scrollgrid-section,
+.fc-theme-standard .fc-scrollgrid-sync-table {
+  border: none !important;
+  box-shadow: none !important;
+}
+
+/* Khôi phục border trong lưới FullCalendar */
+.fc-theme-standard td,
+.fc-theme-standard th {
+  border: 1px solid #e5e7eb !important; /* gray-200 */
+}
+
+/* Loại bỏ border ngoài cùng */
+.fc-theme-standard .fc-scrollgrid {
+  border: none !important;
+}
+
+/* Loại bỏ border trái của cột đầu tiên */
+.fc-theme-standard td:first-child,
+.fc-theme-standard th:first-child {
+  border-left: none !important;
+}
+
+/* Loại bỏ border phải của cột cuối cùng */
+.fc-theme-standard td:last-child,
+.fc-theme-standard th:last-child {
+  border-right: none !important;
+}
+
+/* Loại bỏ border trên của hàng đầu tiên */
+.fc-theme-standard tr:first-child th,
+.fc-theme-standard tr:first-child td {
+  border-top: none !important;
+}
+
+/* Loại bỏ border dưới của hàng cuối cùng */
+.fc-theme-standard tr:last-child td,
+.fc-theme-standard tr:last-child th {
+  border-bottom: none !important;
+}
+
+/* Dòng tiêu đề ngày sát lên trên, không bị hở với header/container */
+.calendar-sticky-header .fc-col-header {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+.calendar-sticky-header .fc-scrollgrid {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+.calendar-sticky-header {
+  padding-top: 0 !important;
+}
+
+/* Đảm bảo các đường kẻ ngang (border-bottom) giữa các hàng luôn hiển thị */
+.fc-theme-standard tr td,
+.fc-theme-standard tr th {
+  border-bottom: 1px solid #e5e7eb !important;
+}
+
+/* Đảm bảo kẻ ngang từng dòng giờ trong timegrid */
+.fc-timegrid-slot, .fc-timegrid-axis {
+  border-bottom: 1px solid #e5e7eb !important;
+}
+.fc-timegrid-slot:last-child, .fc-timegrid-axis:last-child {
+  border-bottom: none !important;
+}
+
+/* Ẩn toàn bộ border của slot 30 phút */
+.fc-timegrid-slot-minor {
+  border-bottom: none !important;
+  border-top: none !important;
+  box-shadow: none !important;
+}
+
+/* Ẩn border của slot 30 phút (minor) ở mọi cấp */
+.fc-timegrid-slot-minor,
+.fc-timegrid-slot-minor * {
+  border: none !important;
+  box-shadow: none !important;
+}
+
+/* Đảm bảo chỉ slot giờ tròn (major) có border-bottom */
+.fc-timegrid-slot {
+  border-bottom: 1px solid #e5e7eb !important;
+}
+
+/* Loại bỏ border-top của slot giờ tròn (major) để không bị kẻ 2 lần */
+.fc-timegrid-slot:not(.fc-timegrid-slot-minor) {
+  border-top: none !important;
+}
+
+/* Nếu vẫn còn, ẩn border-bottom của tr chứa slot 30 phút */
+.fc .fc-timegrid-slots tr.fc-timegrid-slot-minor {
+  border-bottom: none !important;
+  border-top: none !important;
+}
+
+/* Chỉ kẻ ngang cho tr chứa slot giờ tròn, không kẻ cho slot 30 phút */
+.fc .fc-timegrid-slots tr:not(.fc-timegrid-slot-minor) {
+  border-bottom: 1px solid #e5e7eb !important;
+}
+.fc .fc-timegrid-slots tr.fc-timegrid-slot-minor {
+  border-bottom: none !important;
+}
+
+/* Tăng chiều cao mỗi slot giờ trong timeGrid */
+.fc-timegrid-slot {
+  height: 70px !important;
+  min-height: 70px !important;
+  max-height: 70px !important;
+}
+
+/* Gạch ngang dưới dòng tiêu đề ngày (THỨ 2, THỨ 3, ...) */
+.fc .fc-col-header {
+  border-bottom: 2px solid #e5e7eb !important;
+}
+
+/* Custom scrollbar for CalendarFull */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 3px;
+  background: transparent;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #e5e7eb;
+  border-radius: 6px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+.custom-scrollbar::-webkit-scrollbar-button {
+  display: none;
+  height: 0;
+  width: 0;
+}
+
+.h-dvh {
+  height: 100dvh;
+}
+
+html, body, #root {
+  height: 100%;
+  min-height: 100dvh;
+  margin: 0;
+  padding: 0;
+}
+
+/* Giảm kích thước placeholder cho input ngày trong sidebar */
+input[placeholder="dd/mm/yyyy"]::placeholder {
+  font-size: 0.75rem; /* text-xs */
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+
+
+/* Custom styles */
+.line-clamp-1 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+}
+
+.line-clamp-2 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+}
+
+/* Loading animation */
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin {
+  animation: spin 1s linear infinite;
+}
+
+/* Modal animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.3s ease-out;
+}
+
+.animate-scaleIn {
+  animation: scaleIn 0.3s ease-out;
+}
+
+/* Ensure modal is always centered on screen */
+.modal-overlay {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  z-index: 99999 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  background-color: rgba(0, 0, 0, 0.5) !important;
+}
+
+.modal-content {
+  position: relative !important;
+  z-index: 10000 !important;
+  max-width: 90vw !important;
+  max-height: 90vh !important;
+  margin: auto !important;
+}
+
+/* Force modal to be above everything */
+.ai-travel-modal {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  z-index: 99999 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  background-color: rgba(0, 0, 0, 0.5) !important;
+  pointer-events: auto !important;
+}
+
+.ai-travel-modal > div {
+  position: relative !important;
+  z-index: 100000 !important;
+  max-width: 90vw !important;
+  max-height: 90vh !important;
+  margin: auto !important;
+  pointer-events: auto !important;
+}
+
+/* Smooth transitions */
+* {
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow,
+    transform, filter, backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}

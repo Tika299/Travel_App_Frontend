@@ -1,0 +1,19 @@
+/* Ẩn hoàn toàn chữ 'Cả ngày' và thay bằng 'GMT+07' */
+.fc-timegrid-axis-cushion {
+  visibility: hidden !important;
+  position: relative;
+}
+.fc-timegrid-axis-cushion::after {
+  visibility: visible !important;
+  content: 'GMT+07';
+  color: #374151 !important;
+  font-size: 13px !important;
+  font-weight: 500 !important;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  white-space: nowrap;
+  pointer-events: none;
+}
+

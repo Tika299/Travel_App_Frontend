@@ -1,0 +1,374 @@
+/* Interactive Timeline Styles */
+.interactive-timeline {
+    font-family: 'Inter', sans-serif;
+}
+
+.timeline-day {
+    position: relative;
+}
+
+.day-header {
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.day-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, transparent 30%, rgba(255,255,255,0.1) 50%, transparent 70%);
+    transform: translateX(-100%);
+    transition: transform 0.6s ease;
+}
+
+.day-header:hover::before {
+    transform: translateX(100%);
+}
+
+.activities-timeline {
+    position: relative;
+}
+
+.activities-timeline::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(to bottom, #e5e7eb, #3b82f6, #e5e7eb);
+}
+
+.activity-card {
+    position: relative;
+    transition: all 0.3s ease;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.activity-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.activity-card:hover::before {
+    transform: scaleX(1);
+}
+
+.activity-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+/* Time marker styles */
+.activity-card .time-marker {
+    position: relative;
+}
+
+.activity-card .time-marker::before {
+    content: '';
+    position: absolute;
+    left: -24px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 12px;
+    height: 12px;
+    background: #3b82f6;
+    border-radius: 50%;
+    border: 3px solid white;
+    box-shadow: 0 0 0 3px #e5e7eb;
+    z-index: 1;
+}
+
+/* Animation for expanding/collapsing */
+.activities-timeline {
+    transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease;
+}
+
+/* Loading animation */
+@keyframes shimmer {
+    0% {
+        background-position: -200px 0;
+    }
+    100% {
+        background-position: calc(200px + 100%) 0;
+    }
+}
+
+.activity-card.loading {
+    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+    background-size: 200px 100%;
+    animation: shimmer 1.5s infinite;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .interactive-timeline {
+        padding: 1rem;
+    }
+    
+    .day-header {
+        padding: 1rem;
+    }
+    
+    .activity-card {
+        padding: 1rem;
+    }
+    
+    .activities-timeline::before {
+        left: 0.5rem;
+    }
+    
+    .activity-card .time-marker::before {
+        left: -0.5rem;
+    }
+}
+
+/* Custom scrollbar for timeline */
+.interactive-timeline {
+    scrollbar-width: thin;
+    scrollbar-color: #cbd5e1 #f1f5f9;
+}
+
+.interactive-timeline::-webkit-scrollbar {
+    width: 6px;
+}
+
+.interactive-timeline::-webkit-scrollbar-track {
+    background: #f1f5f9;
+    border-radius: 3px;
+}
+
+.interactive-timeline::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 3px;
+}
+
+.interactive-timeline::-webkit-scrollbar-thumb:hover {
+    background: #94a3b8;
+}
+
+/* Hover effects for action buttons */
+.activity-card .action-buttons {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.activity-card:hover .action-buttons {
+    opacity: 1;
+}
+
+/* Gradient backgrounds for different activity types */
+.activity-card[data-type="attraction"] {
+    border-left: 4px solid #3b82f6;
+}
+
+.activity-card[data-type="restaurant"] {
+    border-left: 4px solid #f59e0b;
+}
+
+.activity-card[data-type="hotel"] {
+    border-left: 4px solid #10b981;
+}
+
+.activity-card[data-type="transport"] {
+    border-left: 4px solid #8b5cf6;
+}
+
+/* Pulse animation for new activities */
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+}
+
+.activity-card.new {
+    animation: pulse 2s ease-in-out;
+}
+
+/* Summary section styling */
+.timeline-summary {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-top: 2rem;
+}
+
+.timeline-summary h3 {
+    color: white;
+    margin-bottom: 1rem;
+}
+
+.timeline-summary .summary-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 1rem;
+}
+
+.timeline-summary .summary-item {
+    text-align: center;
+    padding: 0.5rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    backdrop-filter: blur(10px);
+}
+
+/* Floating action button for adding events */
+.add-event-fab {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    width: 56px;
+    height: 56px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+
+.add-event-fab:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Timeline navigation */
+.timeline-navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    padding: 1rem;
+    background: #f8fafc;
+    border-radius: 12px;
+}
+
+.timeline-navigation button {
+    padding: 0.5rem 1rem;
+    border: none;
+    background: #3b82f6;
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.timeline-navigation button:hover {
+    background: #2563eb;
+    transform: translateY(-1px);
+}
+
+.timeline-navigation button:disabled {
+    background: #cbd5e1;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* Day counter */
+.day-counter {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 600;
+    color: #374151;
+}
+
+.day-counter .current-day {
+    background: #3b82f6;
+    color: white;
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.875rem;
+}
+
+/* Weather integration */
+.weather-indicator {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem;
+    background: rgba(59, 130, 246, 0.1);
+    border-radius: 6px;
+    font-size: 0.875rem;
+    color: #1e40af;
+}
+
+.weather-indicator .weather-icon {
+    width: 20px;
+    height: 20px;
+}
+
+/* Budget tracking */
+.budget-tracker {
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+    color: white;
+    padding: 1rem;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+.budget-tracker .budget-progress {
+    width: 100%;
+    height: 8px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+    overflow: hidden;
+    margin-top: 0.5rem;
+}
+
+.budget-tracker .budget-bar {
+    height: 100%;
+    background: white;
+    transition: width 0.3s ease;
+}
+
+/* Accessibility improvements */
+@media (prefers-reduced-motion: reduce) {
+    .activity-card,
+    .day-header,
+    .add-event-fab {
+        transition: none;
+    }
+    
+    .activities-timeline {
+        transition: none;
+    }
+}
+
+/* High contrast mode */
+@media (prefers-contrast: high) {
+    .activity-card {
+        border: 2px solid #000;
+    }
+    
+    .day-header {
+        border: 2px solid #000;
+    }
+    
+    .timeline-summary {
+        border: 2px solid #000;
+    }
+}
+
+
