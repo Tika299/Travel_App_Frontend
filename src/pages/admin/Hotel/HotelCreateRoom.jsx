@@ -31,7 +31,7 @@ export default function HotelCreateRoom({ onCancel, onSubmit, hotelId = "" }) {
     useEffect(() => {
         const fetchHotels = async () => {
             try {
-                const res = await axios.get("http://localhost:8000/api/hotels");
+                const res = await axios.get("https://travel-app-api-ws77.onrender.com/api/hotels");
                 setHotels(res.data.data);
             } catch (error) {
                 console.error("Lỗi khi tải danh sách khách sạn", error);
@@ -42,7 +42,7 @@ export default function HotelCreateRoom({ onCancel, onSubmit, hotelId = "" }) {
         // BƯỚC 2: Lấy danh sách tất cả tiện ích
         const fetchAllAmenities = async () => {
             try {
-                const res = await axios.get("http://localhost:8000/api/amenities");
+                const res = await axios.get("https://travel-app-api-ws77.onrender.com/api/amenities");
                 setAllAmenities(res.data.data || []);
             } catch (error) {
                 console.error("Lỗi khi tải danh sách tiện ích", error);

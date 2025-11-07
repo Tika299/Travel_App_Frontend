@@ -18,7 +18,7 @@ export default function ForgotPasswordPage() {
     setIsSubmitting(true)
 
     try {
-      const response = await fetch("http://localhost:8000/api/send-reset-code", {
+      const response = await fetch("https://travel-app-api-ws77.onrender.com/api/send-reset-code", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

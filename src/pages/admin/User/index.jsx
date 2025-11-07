@@ -43,14 +43,14 @@ const UserManagement = () => {
 
   const fetchUsers = async () => {
     try {
-      await axios.get('http://localhost:8000/sanctum/csrf-cookie');
+      await axios.get('https://travel-app-api-ws77.onrender.com/sanctum/csrf-cookie');
       const token = localStorage.getItem("token");
 
       const [usersRes, statsRes] = await Promise.all([
-        axios.get("http://localhost:8000/api/users", {
+        axios.get("https://travel-app-api-ws77.onrender.com/api/users", {
           headers: { Authorization: `Bearer ${token}` },
         }),
-        axios.get("http://localhost:8000/api/users/stats", {
+        axios.get("https://travel-app-api-ws77.onrender.com/api/users/stats", {
           headers: { Authorization: `Bearer ${token}` },
         }),
       ]);
@@ -66,7 +66,7 @@ const UserManagement = () => {
     const fetchCurrentUser = async () => {
       try {
         const token = localStorage.getItem("token");
-        const res = await axios.get("http://localhost:8000/api/user", {
+        const res = await axios.get("https://travel-app-api-ws77.onrender.com/api/user", {
           headers: {
             Authorization: `Bearer ${token}`
           }
@@ -108,7 +108,7 @@ const UserManagement = () => {
       try {
         const token = localStorage.getItem("token");
         await axios.post(
-          'http://localhost:8000/api/users/delete-multiple',
+          'https://travel-app-api-ws77.onrender.com/api/users/delete-multiple',
           { ids: selectedUsers },
           {
             headers: {
@@ -148,7 +148,7 @@ const UserManagement = () => {
     if (window.confirm("Bạn có chắc chắn muốn xóa người dùng này?")) {
       try {
         const token = localStorage.getItem("token");
-        await axios.delete(`http://localhost:8000/api/users/${userId}`, {
+        await axios.delete(`https://travel-app-api-ws77.onrender.com/api/users/${userId}`, {
           headers: {
             Authorization: `Bearer ${token}`
           }

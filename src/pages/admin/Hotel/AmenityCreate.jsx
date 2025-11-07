@@ -46,7 +46,7 @@ export default function AmenityCreate({ onCancel, onSubmit }) {
 
         setIsSubmitting(true);
         try {
-            const response = await axios.post("http://localhost:8000/api/amenities", form);
+            const response = await axios.post("https://travel-app-api-ws77.onrender.com/api/amenities", form);
             alert("Tạo tiện ích thành công!");
             onSubmit();
         } catch (err) {

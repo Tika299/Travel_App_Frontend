@@ -17,7 +17,7 @@ const Account = () => {
                     return;
                 }
 
-                const response = await fetch("http://localhost:8000/api/user", {
+                const response = await fetch("https://travel-app-api-ws77.onrender.com/api/user", {
                     headers: {
                         Authorization: `Bearer ${token}`,
                     },

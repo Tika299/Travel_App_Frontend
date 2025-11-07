@@ -38,7 +38,7 @@ const AddUserForm = ({ onClose }) => {
 
     try {
       // Gửi thông tin cơ bản để tạo user
-      const res = await axios.post("http://localhost:8000/api/users", {
+      const res = await axios.post("https://travel-app-api-ws77.onrender.com/api/users", {
         name: formData.name,
         email: formData.email,
         password: formData.password,
@@ -59,7 +59,7 @@ const AddUserForm = ({ onClose }) => {
         const avatarData = new FormData()
         avatarData.append("avatar", formData.avatar)
 
-        await axios.post(`http://localhost:8000/api/users/${userId}/avatar`, avatarData, {
+        await axios.post(`https://travel-app-api-ws77.onrender.com/api/users/${userId}/avatar`, avatarData, {
           headers: {
             Authorization: `Bearer ${token}`,
             "Content-Type": "multipart/form-data",

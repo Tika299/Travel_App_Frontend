@@ -14,7 +14,7 @@ export default function GoogleSuccessPage() {
       localStorage.setItem("token", token); // Ghi đúng key
 
       // Lấy thông tin user
-      axios.get("http://localhost:8000/api/user", {
+      axios.get("https://travel-app-api-ws77.onrender.com/api/user", {
         headers: {
           Authorization: `Bearer ${token}`,
         },

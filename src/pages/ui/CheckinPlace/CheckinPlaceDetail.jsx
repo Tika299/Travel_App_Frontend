@@ -140,9 +140,9 @@ const CheckinPlaceDetail = () => {
       return imgPath;
     }
     if (imgPath.startsWith("/storage")) {
-      return `http://localhost:8000${imgPath}`;
+      return `https://travel-app-api-ws77.onrender.com${imgPath}`;
     }
-    return `http://localhost:8000/storage/${imgPath.replace(/^\/+/, "")}`;
+    return `https://travel-app-api-ws77.onrender.com/storage/${imgPath.replace(/^\/+/, "")}`;
   };
 
   // Function to load place data (giữ nguyên)
@@ -680,7 +680,7 @@ const CheckinPlaceDetail = () => {
                           <img
                             src={
                               review.user?.avatar
-                                ? `http://localhost:8000/storage/${review.user.avatar}`
+                                ? `https://travel-app-api-ws77.onrender.com/storage/${review.user.avatar}`
                                 : "https://ui-avatars.com/api/?name=" +
                                   review.user?.name
                             }

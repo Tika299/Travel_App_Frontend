@@ -438,7 +438,7 @@ const TransportationList = () => {
                         <div className="flex-shrink-0 h-10 w-10">
                           <img
                             className="h-10 w-10 rounded-full object-cover"
-                            src={`http://localhost:8000/storage/${item.icon}`}
+                            src={`https://travel-app-api-ws77.onrender.com/storage/${item.icon}`}
                             alt={`${item.name} icon`}
                             onError={(e) => {
                               e.target.onerror = null;

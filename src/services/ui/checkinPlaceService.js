@@ -2,7 +2,7 @@
 import axios from 'axios';
 
 // URL gốc của API Laravel - Đảm bảo đây là cổng mà Laravel đang chạy (thường là 8000)
-const API_URL = 'http://localhost:8000/api';
+const API_URL = 'https://travel-app-api-ws77.onrender.com/api';
 
 // 📍 Lấy tất cả địa điểm check-in
 export const getAllCheckinPlaces = () => {

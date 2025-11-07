@@ -50,7 +50,7 @@ export default function ResetPasswordPage() {
   setIsSubmitting(true)
 
   try {
-    const response = await fetch("http://localhost:8000/api/reset-password", {
+    const response = await fetch("https://travel-app-api-ws77.onrender.com/api/reset-password", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

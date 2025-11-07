@@ -158,7 +158,7 @@ const CheckinPlaceList = () => {
     if (imagePath) {
       return (
         <img
-          src={`http://localhost:8000/storage/${imagePath}`}
+          src={`https://travel-app-api-ws77.onrender.com/storage/${imagePath}`}
           alt={altText}
           className="w-10 h-10 rounded-md object-cover mr-3"
           onError={(e) => {

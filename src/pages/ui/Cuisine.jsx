@@ -160,7 +160,7 @@ const Cuisine = () => {
          }));
 
          // Stats cơ bản từ API nhanh
-         const statsResponse = await fetch('http://localhost:8000/api/cuisines/stats');
+         const statsResponse = await fetch('https://travel-app-api-ws77.onrender.com/api/cuisines/stats');
          const statsData = statsResponse.ok ? await statsResponse.json() : null;
          
          const basicStats = [
@@ -194,7 +194,7 @@ const Cuisine = () => {
      try {
        // Load reviews
        console.log('🚀 Bắt đầu lấy reviews trong background...');
-       const allReviewsResponse = await fetch(`http://localhost:8000/api/reviews?reviewable_type=${encodeURIComponent('App\\Models\\Cuisine')}&limit=1000`, {
+       const allReviewsResponse = await fetch(`https://travel-app-api-ws77.onrender.com/api/reviews?reviewable_type=${encodeURIComponent('App\\Models\\Cuisine')}&limit=1000`, {
          method: 'GET',
          headers: {
            'Accept': 'application/json',

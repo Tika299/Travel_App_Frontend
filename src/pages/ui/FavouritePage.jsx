@@ -20,7 +20,7 @@ const getImageUrl = (imagePath, fallbackUrl = "/img/default.jpg") => {
   
   // Xử lý đường dẫn local storage
   const cleanPath = imagePath.startsWith('/') ? imagePath.substring(1) : imagePath;
-  return `http://localhost:8000/${cleanPath}`;
+  return `https://travel-app-api-ws77.onrender.com/${cleanPath}`;
 };
 
 const FavouritePage = () => {

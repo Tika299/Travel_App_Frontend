@@ -8,7 +8,7 @@ import { IoMdHeartEmpty } from "react-icons/io";
 import { favouriteService } from "../../../services/ui/favouriteService";
 
 const HotelCard = memo(({ hotel, favourites, toggleFavourite }) => {
-    const API_BASE_URL = 'http://localhost:8000/';
+    const API_BASE_URL = 'https://travel-app-api-ws77.onrender.com/';
     const roomImage = hotel.images
         ? `${API_BASE_URL}storage/${hotel.images[0]}`
         : (hotel.rooms && hotel.rooms[0] && hotel.rooms[0].images && hotel.rooms[0].images[0]
@@ -102,7 +102,7 @@ function HotelPage() {
             setLoading(true);
             try {
                 // Lấy danh sách khách sạn từ API với phân trang
-                const res = await fetch(`http://localhost:8000/api/hotels?page=${pagination.hotels.currentPage}`);
+                const res = await fetch(`https://travel-app-api-ws77.onrender.com/api/hotels?page=${pagination.hotels.currentPage}`);
                 const data = await res.json();
 
                 if (!data.success) {

@@ -92,7 +92,7 @@ export default function Sidebar({ onCreateEvent, onAIGenerateEvents, onAILoading
         // Lấy khách sạn (nếu có API)
         let hotels = [];
         try {
-          const hotelRes = await fetch('http://localhost:8000/api/hotels');
+          const hotelRes = await fetch('https://travel-app-api-ws77.onrender.com/api/hotels');
           if (hotelRes.ok) {
             const hotelData = await hotelRes.json();
             hotels = hotelData.data || [];
@@ -104,7 +104,7 @@ export default function Sidebar({ onCreateEvent, onAIGenerateEvents, onAILoading
         // Lấy nhà hàng (nếu có API)
         let restaurants = [];
         try {
-          const restaurantRes = await fetch('http://localhost:8000/api/Restaurant');
+          const restaurantRes = await fetch('https://travel-app-api-ws77.onrender.com/api/Restaurant');
           if (restaurantRes.ok) {
             const restaurantData = await restaurantRes.json();
             restaurants = restaurantData.data || [];
@@ -237,7 +237,7 @@ export default function Sidebar({ onCreateEvent, onAIGenerateEvents, onAILoading
   // Hàm test kết nối backend và tạo dữ liệu mẫu
   const testBackendConnection = async () => {
     try {
-      const response = await fetch('http://localhost:8000/api/checkin-places');
+      const response = await fetch('https://travel-app-api-ws77.onrender.com/api/checkin-places');
       console.log('Backend connection test:', response.ok);
       return response.ok;
     } catch (error) {

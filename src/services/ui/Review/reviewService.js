@@ -1,5 +1,5 @@
 import axios from "axios";
-const URL_LINK = "http://localhost:8000/api";
+const URL_LINK = "https://travel-app-api-ws77.onrender.com/api";
 
 export const getReview = async (reviewId) => {
   const token = localStorage.getItem("token");

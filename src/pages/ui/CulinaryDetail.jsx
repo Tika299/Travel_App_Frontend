@@ -25,7 +25,7 @@ const getImageUrl = (imagePath, fallbackUrl = "https://via.placeholder.com/400x3
   
   // Xử lý đường dẫn local
   const cleanPath = imagePath.startsWith('/') ? imagePath.substring(1) : imagePath;
-  return `http://localhost:8000/${cleanPath}`;
+  return `https://travel-app-api-ws77.onrender.com/${cleanPath}`;
 };
 
 // Component để hiển thị các ngôi sao đánh giá
@@ -418,7 +418,7 @@ const RestaurantCard = ({ restaurant }) => {
     <div className="bg-white p-4 rounded-2xl shadow-md hover:shadow-lg transition-shadow duration-300">
       <div className="flex flex-col sm:flex-row items-start gap-5">
         <img
-          src={restaurant.image ? (restaurant.image.startsWith('http') ? restaurant.image : `http://localhost:8000/${restaurant.image}`) : "https://via.placeholder.com/128x128?text=No+Image"}
+          src={restaurant.image ? (restaurant.image.startsWith('http') ? restaurant.image : `https://travel-app-api-ws77.onrender.com/${restaurant.image}`) : "https://via.placeholder.com/128x128?text=No+Image"}
           alt={restaurant.name}
           className="w-full sm:w-32 sm:h-32 rounded-lg object-cover"
         />

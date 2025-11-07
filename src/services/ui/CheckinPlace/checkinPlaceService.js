@@ -4,7 +4,7 @@ import axios from 'axios';
 // URL gốc của API Laravel - Đảm bảo đây là cổng mà Laravel đang chạy (thường là 8000)
 // Thay đổi URL để trỏ tới endpoint admin như trong Route::post của bạn.
 // Hoặc bạn có thể tạo một biến khác nếu API admin có URL khác.
-const API_URL = 'http://localhost:8000/api'; 
+const API_URL = 'https://travel-app-api-ws77.onrender.com/api'; 
 
 
 // 1. Tạo một instance Axios tùy chỉnh

@@ -72,7 +72,7 @@ const EditUserForm = ({ user, onClose }) => {
 
 
       await axios.post(
-        `http://localhost:8000/api/users/${user.id}?_method=PUT`,
+        `https://travel-app-api-ws77.onrender.com/api/users/${user.id}?_method=PUT`,
         payload,
         {
           headers: {
@@ -95,7 +95,7 @@ const EditUserForm = ({ user, onClose }) => {
 
     try {
       const token = localStorage.getItem("token")
-      const response = await axios.post(`http://localhost:8000/api/users/${user.id}/avatar?_method=POST`, formData, {
+      const response = await axios.post(`https://travel-app-api-ws77.onrender.com/api/users/${user.id}/avatar?_method=POST`, formData, {
         headers: {
           "Content-Type": "multipart/form-data",
           Authorization: `Bearer ${token}`,
@@ -146,7 +146,7 @@ const EditUserForm = ({ user, onClose }) => {
               <div className="w-8 h-8 bg-gray-300 rounded-full flex items-center justify-center overflow-hidden">
                 {formData.avatar ? (
                   <img
-                    src={`http://localhost:8000/${formData.avatar}`} // Ví dụ: http://localhost:8000/img/xyz.jpg
+                    src={`https://travel-app-api-ws77.onrender.com/${formData.avatar}`} // Ví dụ: https://travel-app-api-ws77.onrender.com/img/xyz.jpg
                     alt="avatar"
                     className="w-full h-full object-cover"
                   />

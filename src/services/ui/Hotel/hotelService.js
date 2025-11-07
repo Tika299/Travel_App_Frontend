@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_BASE_URL = 'http://localhost:8000/api/hotels';
+const API_BASE_URL = 'https://travel-app-api-ws77.onrender.com/api/hotels';
 
 export const getAllHotels = (perPage = 10, page = 1) => {
   return axios.get(`${API_BASE_URL}?per_page=${perPage}&page=${page}`);

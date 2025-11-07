@@ -6,7 +6,7 @@ console.log('localStorage userInfo:', localStorage.getItem('userInfo'));
 console.log('localStorage adminInfo:', localStorage.getItem('adminInfo'));
 
 // Cấu hình API cho kết nối với backend Laravel
-const API_BASE_URL = "http://localhost:8000/api";
+const API_BASE_URL = "https://travel-app-api-ws77.onrender.com/api";
 
 const axiosApi = axios.create({
   baseURL: API_BASE_URL,

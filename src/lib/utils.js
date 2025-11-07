@@ -26,9 +26,9 @@ export const getImageUrl = (imagePath, fallbackUrl = "https://via.placeholder.co
   // Xử lý đường dẫn local storage
   let cleanPath = imagePath;
   
-  // Nếu đã có http://localhost:8000/ thì bỏ đi để xử lý lại
-  if (cleanPath.startsWith('http://localhost:8000/')) {
-    cleanPath = cleanPath.substring(21); // Bỏ 'http://localhost:8000/'
+  // Nếu đã có https://travel-app-api-ws77.onrender.com/ thì bỏ đi để xử lý lại
+  if (cleanPath.startsWith('https://travel-app-api-ws77.onrender.com/')) {
+    cleanPath = cleanPath.substring(21); // Bỏ 'https://travel-app-api-ws77.onrender.com/'
   }
   
   // Loại bỏ dấu / ở đầu nếu có
@@ -47,7 +47,7 @@ export const getImageUrl = (imagePath, fallbackUrl = "https://via.placeholder.co
   
   // Thêm cache buster để force reload ảnh
   const cacheBuster = Date.now();
-  return `http://localhost:8000/${cleanPath}?t=${cacheBuster}`;
+  return `https://travel-app-api-ws77.onrender.com/${cleanPath}?t=${cacheBuster}`;
 };
 
 /**

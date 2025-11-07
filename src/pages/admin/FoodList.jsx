@@ -68,7 +68,7 @@ const FoodList = () => {
           name: food.name,
           image: food.image,
           hasImage: !!food.image,
-          fullUrl: food.image?.startsWith('http') ? food.image : `http://localhost:8000${food.image}`
+          fullUrl: food.image?.startsWith('http') ? food.image : `https://travel-app-api-ws77.onrender.com${food.image}`
         });
       });
       
@@ -313,7 +313,7 @@ const FoodList = () => {
                         food.image && food.image.trim() !== ''
                           ? food.image.startsWith('http')
                             ? food.image
-                            : `http://localhost:8000/${food.image}`
+                            : `https://travel-app-api-ws77.onrender.com/${food.image}`
                           : "https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=80&h=80&q=80"
                       } 
                       alt={food.name} 

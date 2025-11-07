@@ -23,7 +23,7 @@ const RestaurantCard = ({ restaurant }) => {
   };
   const handleClick = async (restaurant) => {
     try {
-      const response = await fetch(`http://localhost:8000/api/Restaurant/${restaurant.id}`);
+      const response = await fetch(`https://travel-app-api-ws77.onrender.com/api/Restaurant/${restaurant.id}`);
       if (!response.ok) throw new Error("Không tìm thấy nhà hàng này");
       const data = await response.json();
 
@@ -79,7 +79,7 @@ const RestaurantCard = ({ restaurant }) => {
           onClick={async (e) => {
             e.stopPropagation();
             try {
-              const response = await fetch(`http://localhost:8000/api/Restaurant/${restaurant.id}`); // 💡 Đường dẫn API phải đúng
+              const response = await fetch(`https://travel-app-api-ws77.onrender.com/api/Restaurant/${restaurant.id}`); // 💡 Đường dẫn API phải đúng
               if (!response.ok) throw new Error("Không tìm thấy nhà hàng này");
               const data = await response.json();
               navigate(`${restaurant.id}`);

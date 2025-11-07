@@ -7,10 +7,10 @@ import axios from "axios"
 
 export default function LoginPage() {
   const handleGoogleLogin = () => {
-    window.location.href = "http://localhost:8000/api/auth/google/redirect"
+    window.location.href = "https://travel-app-api-ws77.onrender.com/api/auth/google/redirect"
   };
   const handleFacebookLogin = () => {
-  window.location.href = "http://localhost:8000/api/auth/facebook/redirect";
+  window.location.href = "https://travel-app-api-ws77.onrender.com/api/auth/facebook/redirect";
 };
   const [showPassword, setShowPassword] = useState(false)
   const [rememberMe, setRememberMe] = useState(false)
@@ -29,7 +29,7 @@ export default function LoginPage() {
   }
 
   try {
-    const response = await axios.post("http://localhost:8000/api/login", {
+    const response = await axios.post("https://travel-app-api-ws77.onrender.com/api/login", {
       identifier,
       password,
     });

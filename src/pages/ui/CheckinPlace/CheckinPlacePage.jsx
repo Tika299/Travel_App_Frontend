@@ -119,7 +119,7 @@ const CheckinPlacePage = () => {
           <div className="relative w-full h-48 overflow-hidden rounded-t-lg">
             {item.image ? (
               <img
-                src={`http://localhost:8000/storage/${item.image}`}
+                src={`https://travel-app-api-ws77.onrender.com/storage/${item.image}`}
                 alt={item.name}
                 className="w-full h-full object-cover"
                 onError={(e) => {
@@ -455,7 +455,7 @@ const CheckinPlacePage = () => {
           <>
             {item.image ? (
               <img
-                src={`http://localhost:8000/storage/${item.image}`}
+                src={`https://travel-app-api-ws77.onrender.com/storage/${item.image}`}
                 alt={item.name}
                 className="w-full h-40 object-cover rounded mb-2"
                 onError={(e) => {
@@ -487,7 +487,7 @@ const CheckinPlacePage = () => {
             {/* Đảm bảo hình ảnh được tải đúng cách */}
             {item.image ? (
               <img
-                src={item.image.startsWith('http') ? item.image : `http://localhost:8000${item.image}`}
+                src={item.image.startsWith('http') ? item.image : `https://travel-app-api-ws77.onrender.com${item.image}`}
                 alt={item.name}
                 className="w-full h-40 object-cover rounded mb-2"
                 onError={(e) => {
@@ -521,7 +521,7 @@ const CheckinPlacePage = () => {
             <div className="flex flex-col items-center text-center p-4">
               {/* Icon động từ backend */}
               <img
-                src={`http://localhost:8000/storage/${item.icon}`}
+                src={`https://travel-app-api-ws77.onrender.com/storage/${item.icon}`}
                 alt={item.name}
                 className="w-10 h-10 mb-2 object-contain"
                 onError={(e) => {

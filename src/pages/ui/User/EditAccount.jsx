@@ -28,7 +28,7 @@ const EditAccount = () => {
     const fetchUser = async () => {
       try {
         const token = localStorage.getItem("token");
-        const response = await axios.get("http://localhost:8000/api/user", {
+        const response = await axios.get("https://travel-app-api-ws77.onrender.com/api/user", {
           headers: {
             Authorization: `Bearer ${token}`,
           },
@@ -68,13 +68,13 @@ const EditAccount = () => {
       const token = localStorage.getItem("token");
       const { id, created_at, email, ...payload } = formData;
 
-      await axios.put(`http://localhost:8000/api/user/${id}`, payload, {
+      await axios.put(`https://travel-app-api-ws77.onrender.com/api/user/${id}`, payload, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
       });
 
-      const response = await axios.get("http://localhost:8000/api/user", {
+      const response = await axios.get("https://travel-app-api-ws77.onrender.com/api/user", {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -101,7 +101,7 @@ const EditAccount = () => {
 
     try {
       const response = await axios.post(
-        "http://localhost:8000/api/user/avatar",
+        "https://travel-app-api-ws77.onrender.com/api/user/avatar",
         formDataUpload,
         {
           headers: {
@@ -113,7 +113,7 @@ const EditAccount = () => {
 
       setAvatarUrl(getAvatarUrl(response.data.avatar_url));
 
-      const userRes = await axios.get("http://localhost:8000/api/user", {
+      const userRes = await axios.get("https://travel-app-api-ws77.onrender.com/api/user", {
         headers: {
           Authorization: `Bearer ${token}`,
         },

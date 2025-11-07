@@ -13,7 +13,7 @@ export default function FacebookSuccess() {
       localStorage.setItem("token", token); // Sửa lại tên key cho thống nhất
 
       // Gửi request để lấy user từ backend
-      axios.get("http://localhost:8000/api/user", {
+      axios.get("https://travel-app-api-ws77.onrender.com/api/user", {
         headers: {
           Authorization: `Bearer ${token}`,
         },

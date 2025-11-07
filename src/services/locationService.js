@@ -2,7 +2,7 @@ import axios from 'axios';
 
 // Tạo axios instance riêng cho location service (không cần auth)
 const locationApi = axios.create({
-  baseURL: 'http://localhost:8000/api',
+  baseURL: 'https://travel-app-api-ws77.onrender.com/api',
   headers: {
     'Content-Type': 'application/json',
     'Accept': 'application/json',

@@ -21,7 +21,7 @@ const getFullImageUrl = (imagePath) => {
   if (imagePath.startsWith("http://") || imagePath.startsWith("https://")) {
     return imagePath;
   }
-  const ASSET_BASE_URL = "http://localhost:8000/storage/";
+  const ASSET_BASE_URL = "https://travel-app-api-ws77.onrender.com/storage/";
   const cleanPath = imagePath.startsWith("/") ? imagePath.substring(1) : imagePath;
   return `${ASSET_BASE_URL}${cleanPath}`;
 };

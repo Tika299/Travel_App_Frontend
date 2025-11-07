@@ -8,7 +8,7 @@ const siteConfig = {
   // API URL
   apiUrl: process.env.NODE_ENV === 'production'
     ? 'https://your-api-domain.com'
-    : 'http://localhost:8000',
+    : 'https://travel-app-api-ws77.onrender.com',
   
   // Tên website
   siteName: 'Travel App - Khám phá ẩm thực Việt Nam',

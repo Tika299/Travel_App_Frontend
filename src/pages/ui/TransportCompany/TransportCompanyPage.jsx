@@ -10,12 +10,12 @@ import 'sweetalert2/dist/sweetalert2.css';
 import { FaStar } from "react-icons/fa"; // Import FaStar để hiển thị ngôi sao
 
 const ITEMS_PER_PAGE = 6;
-const ASSET_BASE_URL = "http://localhost:8000/storage/";
+const ASSET_BASE_URL = "https://travel-app-api-ws77.onrender.com/storage/";
 
 // Function to fetch reviews for a single company
 const fetchCompanyReviews = async (companyId) => {
   try {
-    const response = await fetch(`http://localhost:8000/api/transport-companies/${companyId}/reviews`);
+    const response = await fetch(`https://travel-app-api-ws77.onrender.com/api/transport-companies/${companyId}/reviews`);
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`);
     }

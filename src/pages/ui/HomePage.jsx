@@ -9,7 +9,7 @@ import Footer from "../../components/Footer";
 
 import { favouriteService } from "../../services/ui/favouriteService"; // Import favourite API service
 
-const API_BASE_URL = "http://localhost:8000/"; // Base API URL for images
+const API_BASE_URL = "https://travel-app-api-ws77.onrender.com/"; // Base API URL for images
 
 // Function để xử lý URL ảnh (giống như trong FoodList)
 const getImageUrl = (imagePath, fallbackUrl = "/public/img/PhoHaNoi.jpg") => {
@@ -23,7 +23,7 @@ const getImageUrl = (imagePath, fallbackUrl = "/public/img/PhoHaNoi.jpg") => {
   
   // Xử lý đường dẫn local
   const cleanPath = imagePath.startsWith('/') ? imagePath.substring(1) : imagePath;
-  return `http://localhost:8000/${cleanPath}`;
+  return `https://travel-app-api-ws77.onrender.com/${cleanPath}`;
 };
 
 // Các thành phần card như DestinationCard, CuisineCard, HotelCard, MembershipCard không thay đổi
@@ -275,9 +275,9 @@ const HomePage = () => {
             try {
 
                 const [destinationsRes, hotelsRes, cuisinesRes] = await Promise.all([
-                    fetch("http://localhost:8000/api/checkin-places/popular").then(res => res.json()),
-                    fetch("http://localhost:8000/api/hotels/popular").then(res => res.json()),
-                    fetch("http://localhost:8000/api/cuisines/latest").then(res => res.json()),
+                    fetch("https://travel-app-api-ws77.onrender.com/api/checkin-places/popular").then(res => res.json()),
+                    fetch("https://travel-app-api-ws77.onrender.com/api/hotels/popular").then(res => res.json()),
+                    fetch("https://travel-app-api-ws77.onrender.com/api/cuisines/latest").then(res => res.json()),
                 ]);
 
 

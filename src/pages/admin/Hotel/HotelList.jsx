@@ -9,7 +9,7 @@ import AmenityCreate from './AmenityCreate';
 import Pagination from "../../../components/Pagination";
 import { deleteHotel, createHotel } from '../../../services/ui/Hotel/hotelService';
 
-const API_BASE_URL = 'http://localhost:8000';
+const API_BASE_URL = 'https://travel-app-api-ws77.onrender.com';
 
 function HotelList() {
     const [hotels, setHotels] = useState([]);

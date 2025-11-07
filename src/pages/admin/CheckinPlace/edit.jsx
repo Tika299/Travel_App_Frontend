@@ -128,7 +128,7 @@ export default function EditCheckinPlace() {
                         if (path.startsWith("http://") || path.startsWith("https://")) {
                             return path;
                         }
-                        return `http://localhost:8000/storage/${path}`;
+                        return `https://travel-app-api-ws77.onrender.com/storage/${path}`;
                     };
 
                     setForm({
@@ -336,8 +336,8 @@ export default function EditCheckinPlace() {
                 }
             });
             form.old_gallery.forEach((p) => {
-                const path = p.startsWith("http://localhost:8000/storage/")
-                    ? p.replace("http://localhost:8000/storage/", "")
+                const path = p.startsWith("https://travel-app-api-ws77.onrender.com/storage/")
+                    ? p.replace("https://travel-app-api-ws77.onrender.com/storage/", "")
                     : p;
                 if (path) {
                     fd.append("old_images[]", path);

@@ -22,7 +22,7 @@ function HotelDetailPage() {
   const [locationPermissionDenied, setLocationPermissionDenied] = useState(false);
   const [userLocation, setUserLocation] = useState(null);
   const [roomAmenities, setRoomAmenities] = useState({});
-  const API_BASE_URL = 'http://localhost:8000';
+  const API_BASE_URL = 'https://travel-app-api-ws77.onrender.com';
 
   const parseImages = (images) => {
     if (!images) return [];
@@ -69,7 +69,7 @@ function HotelDetailPage() {
 
   const fetchRoomAmenities = useCallback(async (roomId) => {
     try {
-      const response = await fetch(`http://localhost:8000/api/hotel-rooms/${roomId}/amenities`);
+      const response = await fetch(`https://travel-app-api-ws77.onrender.com/api/hotel-rooms/${roomId}/amenities`);
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
@@ -101,7 +101,7 @@ function HotelDetailPage() {
     const fetchHotelAndFavourites = async () => {
       setLoading(true);
       try {
-        const res = await fetch(`http://localhost:8000/api/hotels/${id}`);
+        const res = await fetch(`https://travel-app-api-ws77.onrender.com/api/hotels/${id}`);
         const data = await res.json();
 
         if (!data.success) throw new Error(data.message || "Khách sạn không tồn tại");

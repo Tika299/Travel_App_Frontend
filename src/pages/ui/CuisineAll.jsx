@@ -18,7 +18,7 @@ const getImageUrl = (imagePath, fallbackUrl = "https://via.placeholder.com/400x3
   
   // Xử lý đường dẫn local
   const cleanPath = imagePath.startsWith('/') ? imagePath.substring(1) : imagePath;
-  return `http://localhost:8000/${cleanPath}`;
+  return `https://travel-app-api-ws77.onrender.com/${cleanPath}`;
 };
 
 const PAGE_SIZE = 8;

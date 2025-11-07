@@ -77,7 +77,7 @@ const DropZone = ({ file, onChange, onRemove, existingUrl, error }) => (
         {file || existingUrl ? (
             <div className="group relative h-40 w-full">
                 <img
-                    src={file ? URL.createObjectURL(file) : `http://localhost:8000${existingUrl.startsWith('/') ? '' : '/'}${existingUrl}`}
+                    src={file ? URL.createObjectURL(file) : `https://travel-app-api-ws77.onrender.com${existingUrl.startsWith('/') ? '' : '/'}${existingUrl}`}
                     alt="preview"
                     className="h-full w-full object-contain"
                 />
@@ -387,7 +387,7 @@ const EditTransportCompany = () => {
                 return;
             }
 
-            const response = await axios.post(`http://localhost:8000/api/transport-companies/${id}`, payload, {
+            const response = await axios.post(`https://travel-app-api-ws77.onrender.com/api/transport-companies/${id}`, payload, {
                 headers: {
                     // Thêm Authorization header với token để xác thực
                     'Authorization': `Bearer ${token}`

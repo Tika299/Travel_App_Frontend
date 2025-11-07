@@ -54,7 +54,7 @@ export default function VerifyCodePage() {
 
     setIsVerifying(true)
     try {
-      const res = await fetch("http://localhost:8000/api/verify-reset-code", {
+      const res = await fetch("https://travel-app-api-ws77.onrender.com/api/verify-reset-code", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -79,7 +79,7 @@ export default function VerifyCodePage() {
   const handleResendCode = async () => {
     setIsResending(true)
     try {
-      await fetch("http://localhost:8000/api/send-reset-code", {
+      await fetch("https://travel-app-api-ws77.onrender.com/api/send-reset-code", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

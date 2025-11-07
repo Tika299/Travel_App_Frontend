@@ -2,7 +2,7 @@ import React, { useState, useEffect, useCallback } from "react";
 import axios from "axios";
 import { getAmenityIcon } from "../../../services/iconConfig";
 
-const API_BASE_URL = "http://localhost:8000/";
+const API_BASE_URL = "https://travel-app-api-ws77.onrender.com/";
 
 export default function HotelEditRoom({ roomId, onCancel, onSubmit }) {
     // --- STATE ---

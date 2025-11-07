@@ -25,7 +25,7 @@ const getImageUrl = (imagePath, fallbackUrl = "https://via.placeholder.com/400x3
   
   // Xử lý đường dẫn local storage
   const cleanPath = imagePath.startsWith('/') ? imagePath.substring(1) : imagePath;
-  return `http://localhost:8000/${cleanPath}`;
+  return `https://travel-app-api-ws77.onrender.com/${cleanPath}`;
 };
 
 const FoodEdit = () => {
@@ -203,7 +203,7 @@ const FoodEdit = () => {
   // Helper gửi request với method override (POST + _method=PUT nếu cần)
   const apiCallOverrideMethod = (endpoint, data, method) => {
     if (data instanceof FormData) {
-      return fetch(`http://localhost:8000/api${endpoint}`, {
+      return fetch(`https://travel-app-api-ws77.onrender.com/api${endpoint}`, {
         method: method,
         body: data,
         headers: { 'Accept': 'application/json' }

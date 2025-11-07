@@ -2,7 +2,7 @@
 import axios from "axios";
 
 // Đảm bảo URL này là chính xác
-const API_URL = "http://localhost:8000/api";
+const API_URL = "https://travel-app-api-ws77.onrender.com/api";
 
 const api = axios.create({
   baseURL: API_URL,

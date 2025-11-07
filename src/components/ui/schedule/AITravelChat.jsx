@@ -170,7 +170,7 @@ const AITravelChat = ({ isOpen, onClose, onGenerateItinerary }) => {
 
         try {
             // Gọi API chat với prompt yêu cầu trả lời tiếng Việt
-            const response = await fetch('http://localhost:8000/api/ai/chat', {
+            const response = await fetch('https://travel-app-api-ws77.onrender.com/api/ai/chat', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -334,7 +334,7 @@ const AITravelChat = ({ isOpen, onClose, onGenerateItinerary }) => {
                     className="w-16 h-16 rounded-full shadow-2xl hover:shadow-3xl transition-all duration-300 transform hover:scale-110 flex items-center justify-center relative"
                 >
                     <img 
-                        src={isThinking ? "http://localhost:8000/image/AIsuynghi.png" : "http://localhost:8000/image/AI.png"} 
+                        src={isThinking ? "https://travel-app-api-ws77.onrender.com/image/AIsuynghi.png" : "https://travel-app-api-ws77.onrender.com/image/AI.png"} 
                         alt="AI Ipsum Travel Assistant" 
                         className={`w-16 h-16 rounded-full object-contain transition-all duration-300 ${
                             isThinking ? 'animate-pulse' : 
@@ -373,7 +373,7 @@ const AITravelChat = ({ isOpen, onClose, onGenerateItinerary }) => {
                     <div className="flex items-center justify-between p-4 border-b bg-white text-gray-800 rounded-t-xl">
                         <div className="flex items-center space-x-2">
                             <img 
-                                src={isThinking ? "http://localhost:8000/image/AIsuynghi.png" : "http://localhost:8000/image/AI.png"} 
+                                src={isThinking ? "https://travel-app-api-ws77.onrender.com/image/AIsuynghi.png" : "https://travel-app-api-ws77.onrender.com/image/AI.png"} 
                                 alt="AI Ipsum Travel Assistant" 
                                 className={`w-6 h-6 rounded-full object-contain transition-all duration-300 ${isThinking ? 'animate-pulse' : ''}`}
                                 onError={(e) => {

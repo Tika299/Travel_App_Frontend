@@ -1,6 +1,6 @@
 import { axiosApi } from './api';
 
-const API_BASE_URL = 'http://localhost:8000/api';
+const API_BASE_URL = 'https://travel-app-api-ws77.onrender.com/api';
 
 export const featuredActivitiesService = {
     // Lấy hoạt động nổi bật theo ngày

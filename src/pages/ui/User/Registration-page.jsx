@@ -7,10 +7,10 @@ import axios from "axios"
 
 export default function RegistrationPage() {
   const handleGoogleLogin = () => {
-    window.location.href = "http://localhost:8000/api/auth/google/redirect"
+    window.location.href = "https://travel-app-api-ws77.onrender.com/api/auth/google/redirect"
   };
   const handleFacebookLogin = () => {
-  window.location.href = "http://localhost:8000/api/auth/facebook/redirect";
+  window.location.href = "https://travel-app-api-ws77.onrender.com/api/auth/facebook/redirect";
 };
   const [showPassword, setShowPassword] = useState(false)
   const [showConfirmPassword, setShowConfirmPassword] = useState(false)
@@ -36,7 +36,7 @@ export default function RegistrationPage() {
     }
 
     try {
-      const response = await axios.post("http://localhost:8000/api/send-code", {
+      const response = await axios.post("https://travel-app-api-ws77.onrender.com/api/send-code", {
         email: form.email,
       })
       alert("✅ " + response.data.message)
@@ -56,7 +56,7 @@ export default function RegistrationPage() {
     }
 
     try {
-      const res = await axios.post("http://localhost:8000/api/verify-code", {
+      const res = await axios.post("https://travel-app-api-ws77.onrender.com/api/verify-code", {
         name: form.name,
         email: form.email,
         phone: form.phone,

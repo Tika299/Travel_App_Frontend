@@ -3,7 +3,7 @@
 // Import Axios hoặc bất kỳ thư viện HTTP client nào bạn đang dùng
 import axios from "axios";
 
-const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || "http://localhost:8000/api"; // Giả định base URL của API Laravel
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || "https://travel-app-api-ws77.onrender.com/api"; // Giả định base URL của API Laravel
 
 /**
  * Hàm để lấy danh sách tất cả các locations (thành phố) từ API.

@@ -30,9 +30,9 @@ export default function HotelEdit({ hotelData, onCancel, onSubmit }) {
                     // Kiểm tra nếu images là chuỗi JSON thì parse, nếu không thì dùng trực tiếp
                     parsedImages = typeof images === 'string' ? JSON.parse(images) : images;
                     if (!Array.isArray(parsedImages)) return [];
-                    // Chuyển đổi đường dẫn ảnh thành URL đầy đủ với http://localhost:8000/
+                    // Chuyển đổi đường dẫn ảnh thành URL đầy đủ với https://travel-app-api-ws77.onrender.com/
                     return parsedImages.map(path => 
-                        path.startsWith('http') ? path : `http://localhost:8000/${path}`
+                        path.startsWith('http') ? path : `https://travel-app-api-ws77.onrender.com/${path}`
                     );
                 } catch (error) {
                     console.error("Lỗi khi parse images:", error);
@@ -140,7 +140,7 @@ export default function HotelEdit({ hotelData, onCancel, onSubmit }) {
             const existingImages = form.images.filter(img => typeof img === 'string');
             if (existingImages.length > 0) {
                 fd.append('existing_images', JSON.stringify(existingImages.map(img => 
-                    img.replace('http://localhost:8000/', '')
+                    img.replace('https://travel-app-api-ws77.onrender.com/', '')
                 )));
             }
 
@@ -324,7 +324,7 @@ export default function HotelEdit({ hotelData, onCancel, onSubmit }) {
                             type="button"
                             onClick={() => {
                                 const images = hotelData.images ? (typeof hotelData.images === 'string' ? JSON.parse(hotelData.images) : hotelData.images).map(path => 
-                                    path.startsWith('http') ? path : `http://localhost:8000/${path}`
+                                    path.startsWith('http') ? path : `https://travel-app-api-ws77.onrender.com/${path}`
                                 ) : [];
                                 setForm({
                                     ...initialForm,

@@ -1,7 +1,7 @@
 // src/services/transportationService.js
 import axios from 'axios';
 
-const API_URL = 'http://localhost:8000/api';
+const API_URL = 'https://travel-app-api-ws77.onrender.com/api';
 
 // 📌 Lấy tất cả loại phương tiện
 export const getAllTransportations = () => axios.get(`${API_URL}/transportations`);

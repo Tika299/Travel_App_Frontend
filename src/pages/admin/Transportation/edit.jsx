@@ -232,7 +232,7 @@ const EditTransportationComponent = () => {
                 const res = await getTransportationById(id);
                 const t = res.data.data;
 
-                const backendBaseUrl = "http://localhost:8000/storage/";
+                const backendBaseUrl = "https://travel-app-api-ws77.onrender.com/storage/";
 
                 const fullIconUrl = t.icon ? `${backendBaseUrl}${t.icon}` : null;
                 const fullBannerUrl = t.banner ? `${backendBaseUrl}${t.banner}` : null;
