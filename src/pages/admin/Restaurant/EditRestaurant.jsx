@@ -98,7 +98,7 @@ const EditRestaurant = () => {
           latitude: restaurant.latitude || "",
           longitude: restaurant.longitude || "",
           image: null,
-          image_url: `http://localhost:5173/image/${restaurant.image}`,
+          image_url: `https://travelappdeloy.vercel.app/image/${restaurant.image}`,
         });
         setInitialForm({
           name: restaurant.name || "",
@@ -589,7 +589,7 @@ const EditRestaurant = () => {
                         src={
                           form.image instanceof File
                             ? URL.createObjectURL(form.image) // nếu là File => tạo URL tạm
-                            : `http://localhost:5173/${form.image}` // nếu là chuỗi (ảnh cũ) => lấy từ server
+                            : `https://travelappdeloy.vercel.app/${form.image}` // nếu là chuỗi (ảnh cũ) => lấy từ server
                         }
                         alt="Preview"
                         className="w-full h-48 object-cover rounded"

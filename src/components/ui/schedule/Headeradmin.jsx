@@ -69,7 +69,7 @@ export default function Headeradmin() {
     if (avatar.startsWith("http")) return avatar; // Avatar từ Google, Facebook
 
     // ✅ Ảnh nội bộ lưu tại React: /public/img
-    return `http://localhost:5173/${avatar}`;
+    return `https://travelappdeloy.vercel.app/${avatar}`;
   };
   const getPageTitle = () => {
     const path = location.pathname;
@@ -125,7 +125,7 @@ export default function Headeradmin() {
               <div className="w-8 h-8 rounded-full overflow-hidden bg-gray-300 flex items-center justify-center">
                 {currentUser?.avatar ? (
                   <img
-                    src={`http://localhost:5173/${currentUser.avatar}`}
+                    src={`https://travelappdeloy.vercel.app/${currentUser.avatar}`}
                     alt={currentUser.name}
                     className="w-full h-full object-cover"
                   />

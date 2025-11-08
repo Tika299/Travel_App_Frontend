@@ -42,7 +42,7 @@ const Header = () => {
     if (avatar.startsWith("http")) return avatar; // Avatar từ Google, Facebook
 
     // ✅ Ảnh nội bộ lưu tại React: /public/img
-    return `http://localhost:5173/${avatar}`;
+    return `https://travelappdeloy.vercel.app/${avatar}`;
   };
 
 
