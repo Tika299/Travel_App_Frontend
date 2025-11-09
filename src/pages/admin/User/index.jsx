@@ -190,7 +190,7 @@ const UserManagement = () => {
                 <div className="w-8 h-8 rounded-full overflow-hidden bg-gray-300 flex items-center justify-center">
                   {currentUser?.avatar ? (
                     <img
-                      src={`https://travelappdeloy.vercel.app/${currentUser.avatar}`}
+                      src={`https://690ff9c7f7e8158b7a39d76a--dancing-rabanadas-d78186.netlify.app/${currentUser.avatar}`}
                       alt={currentUser.name}
                       className="w-full h-full object-cover"
                     />
@@ -323,7 +323,7 @@ const UserManagement = () => {
                         <div className="w-10 h-10 rounded-full overflow-hidden bg-gray-200 flex items-center justify-center">
                           {user.avatar ? (
                             <img
-                              src={`https://travelappdeloy.vercel.app/${user.avatar}`}
+                              src={`https://690ff9c7f7e8158b7a39d76a--dancing-rabanadas-d78186.netlify.app/${user.avatar}`}
                               alt={user.name}
                               className="w-full h-full object-cover"
                             />

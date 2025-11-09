@@ -98,7 +98,7 @@ const EditRestaurant = () => {
           latitude: restaurant.latitude || "",
           longitude: restaurant.longitude || "",
           image: null,
-          image_url: `https://travelappdeloy.vercel.app/image/${restaurant.image}`,
+          image_url: `https://690ff9c7f7e8158b7a39d76a--dancing-rabanadas-d78186.netlify.app/image/${restaurant.image}`,
         });
         setInitialForm({
           name: restaurant.name || "",
@@ -589,7 +589,7 @@ const EditRestaurant = () => {
                         src={
                           form.image instanceof File
                             ? URL.createObjectURL(form.image) // nếu là File => tạo URL tạm
-                            : `https://travelappdeloy.vercel.app/${form.image}` // nếu là chuỗi (ảnh cũ) => lấy từ server
+                            : `https://690ff9c7f7e8158b7a39d76a--dancing-rabanadas-d78186.netlify.app/${form.image}` // nếu là chuỗi (ảnh cũ) => lấy từ server
                         }
                         alt="Preview"
                         className="w-full h-48 object-cover rounded"

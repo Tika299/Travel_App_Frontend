@@ -69,7 +69,7 @@ export default function Headeradmin() {
     if (avatar.startsWith("http")) return avatar; // Avatar từ Google, Facebook
 
     // ✅ Ảnh nội bộ lưu tại React: /public/img
-    return `https://travelappdeloy.vercel.app/${avatar}`;
+    return `https://690ff9c7f7e8158b7a39d76a--dancing-rabanadas-d78186.netlify.app/${avatar}`;
   };
   const getPageTitle = () => {
     const path = location.pathname;
@@ -125,7 +125,7 @@ export default function Headeradmin() {
               <div className="w-8 h-8 rounded-full overflow-hidden bg-gray-300 flex items-center justify-center">
                 {currentUser?.avatar ? (
                   <img
-                    src={`https://travelappdeloy.vercel.app/${currentUser.avatar}`}
+                    src={`https://690ff9c7f7e8158b7a39d76a--dancing-rabanadas-d78186.netlify.app/${currentUser.avatar}`}
                     alt={currentUser.name}
                     className="w-full h-full object-cover"
                   />
