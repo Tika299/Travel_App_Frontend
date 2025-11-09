@@ -82,7 +82,7 @@ function App() {
 
   return (
     <Router>
-       <ToastContainer
+      <ToastContainer
         position="top-right"
         autoClose={3000}
         hideProgressBar={false}
@@ -93,25 +93,22 @@ function App() {
         draggable
         pauseOnHover
       />
-      
+
       {/* AI Travel Chat - Floating Icon - Hiển thị trên tất cả màn hình */}
-      <AITravelChat 
+      <AITravelChat
         onGenerateItinerary={(itineraryData) => {
           // Xử lý khi AI tạo lịch trình từ chat
           console.log('Generated itinerary from chat:', itineraryData);
           // Có thể mở modal AI Travel với dữ liệu này
         }}
       />
-      
-      <Routes>
 
+      <Routes>
         {/* ===== PUBLIC PAGES ===== */}
         <Route path="/" element={<HomePage />} />
 
         {/* Hotels */}
-        <Route path="/admin/hotels" element={<AdminLayout>
-          <HotelList />
-        </AdminLayout>} />
+        <Route path="/admin/hotels" element={<AdminLayout><HotelList /></AdminLayout>} />
         <Route path="/hotels" element={<HotelPage />} />
 
         {/* Auth */}
@@ -120,163 +117,63 @@ function App() {
         <Route path="/forgot_password" element={<ForgotPassWordPage />} />
         <Route path="/verify" element={<VerifyPage />} />
         <Route path="/resetpass" element={<ResetPassWordPage />} />
-        {/* google */}
-        <Route path="/google-success?token=" element={<GoogleSuccess />} />
-        {/* google */}
-        <Route path="//facebook-success" element={<FacebookSuccess />} />
-        {/* data */}
+
+        {/* Google Success - Xóa ?token= trong path, xử lý query trong component */}
+        <Route path="/google-success" element={<GoogleSuccess />} />
+
+        {/* Facebook Success - Sửa // thành / */}
+        <Route path="/facebook-success" element={<FacebookSuccess />} />
+
+        {/* OAuth Success - Đã ok */}
         <Route path="/oauth-success" element={<OAuthSuccess />} />
-        {/* tài khoản */}
+
+        {/* Tài khoản */}
         <Route path="/account" element={<Account />} />
         <Route path="/edit-account" element={<EditAccount />} />
 
         {/* ===== ADMIN - User ===== */}
-        <Route path="/admin/User" element={
-          <AdminLayout>
-            <AdminUserList />
-          </AdminLayout>
-        } />
-        <Route path="/admin/User/create" element={
-          <AdminLayout>
-            <AdminUserCreate />
-          </AdminLayout>} />
-        <Route path="/admin/User/edit/:id" element={
-          <AdminLayout>
-            <AdminUserEdit />
-          </AdminLayout>
-        } />
+        <Route path="/admin/User" element={<AdminLayout><AdminUserList /></AdminLayout>} />
+        <Route path="/admin/User/create" element={<AdminLayout><AdminUserCreate /></AdminLayout>} />
+        <Route path="/admin/User/edit/:id" element={<AdminLayout><AdminUserEdit /></AdminLayout>} />
 
-        {/* 1. Đặt route /checkin-places/all LÊN TRƯỚC */}
-        {/* Route này sẽ hiển thị tất cả các địa điểm, sử dụng cùng component CheckinPlacePage */}
-        <Route
-          path="/checkin-places/all"
-          element={<CheckinPlacePage showAll={true} />}
-        />
-
-        {/* 2. Route /checkin-places (nếu có) cũng nên đứng trước route động có :id */}
-        {/* Route này có thể dùng để hiển thị các địa điểm gợi ý hoặc trang chính */}
+        {/* Checkin Places - Đã sắp xếp đúng thứ tự để tránh conflict :id */}
+        <Route path="/checkin-places/all" element={<CheckinPlacePage showAll={true} />} />
         <Route path="/checkin-places" element={<CheckinPlacePage />} />
-
-        {/* 3. Đặt route động /checkin-places/:id XUỐNG DƯỚI CÙNG trong nhóm này */}
         <Route path="/checkin-places/:id" element={<CheckinPlaceDetail />} />
 
         <Route path="/transport-companies" element={<TransportCompanyPage />} />
-
-        <Route
-          path="/transport-companies/:id"
-          element={<TransportCompanyDetail />}
-        />
+        <Route path="/transport-companies/:id" element={<TransportCompanyDetail />} />
         <Route path="/favorites" element={<FavouritePage />} />
 
         {/* ===== ADMIN - Transport Companies ===== */}
-        <Route
-          path="/admin/transport-companies"
-          element={
-            <AdminLayout>
-              <AdminTransportCompanyList />
-            </AdminLayout>
-          }
-        />
-        <Route
-          path="/admin/transport-companies/create"
-          element={
-            <AdminLayout>
-              <AdminTransportCompanyCreate />
-            </AdminLayout>
-          }
-        />
-        <Route
-          path="/admin/transport-companies/edit/:id"
-          element={
-            <AdminLayout>
-              <AdminTransportCompanyEdit />
-            </AdminLayout>
-          }
-        />
+        <Route path="/admin/transport-companies" element={<AdminLayout><AdminTransportCompanyList /></AdminLayout>} />
+        <Route path="/admin/transport-companies/create" element={<AdminLayout><AdminTransportCompanyCreate /></AdminLayout>} />
+        <Route path="/admin/transport-companies/edit/:id" element={<AdminLayout><AdminTransportCompanyEdit /></AdminLayout>} />
 
         {/* ===== ADMIN - Checkin Places ===== */}
-        <Route
-          path="/admin/checkin-places"
-          element={
-            <AdminLayout>
-              <AdminCheckinPlaceList />
-            </AdminLayout>
-          }
-        />
+        <Route path="/admin/checkin-places" element={<AdminLayout><AdminCheckinPlaceList /></AdminLayout>} />
+        <Route path="/admin/checkin-places/create" element={<AdminLayout><AdminCheckinPlaceCreate /></AdminLayout>} />
+        <Route path="/admin/checkin-places/edit/:id" element={<AdminLayout><AdminCheckinPlaceEdit /></AdminLayout>} />
 
-        <Route
-          path="/admin/checkin-places/create"
-          element={
-            <AdminLayout>
-              <AdminCheckinPlaceCreate />
-            </AdminLayout>
-          }
-        />
-        <Route
-          path="/admin/checkin-places/edit/:id"
-          element={
-            <AdminLayout>
-              <AdminCheckinPlaceEdit />
-            </AdminLayout>
-          }
-        />
-
-        {/* ===== ADMIN - Transportation (New Routes) ===== */}
-
-        <Route
-          path="/admin/transportations"
-          element={
-            <AdminLayout>
-              <AdminTransportationList />
-            </AdminLayout>
-          }
-        />
-        <Route
-          path="/admin/transportations/create"
-          element={
-            <AdminLayout>
-              <AdminTransportationCreate />
-            </AdminLayout>
-          }
-        />
-        <Route
-          path="/admin/transportations/edit/:id"
-          element={
-            <AdminLayout>
-              <AdminTransportationEdit />
-            </AdminLayout>
-          }
-        />
+        {/* ===== ADMIN - Transportation ===== */}
+        <Route path="/admin/transportations" element={<AdminLayout><AdminTransportationList /></AdminLayout>} />
+        <Route path="/admin/transportations/create" element={<AdminLayout><AdminTransportationCreate /></AdminLayout>} />
+        <Route path="/admin/transportations/edit/:id" element={<AdminLayout><AdminTransportationEdit /></AdminLayout>} />
 
         {/* Trang ẩm thực */}
         <Route path="/cuisine" element={<Cuisine />} />
-        {/* Trang xem tất cả món ăn */}
         <Route path="/cuisine/all" element={<CuisineAll />} />
-        {/* Trang chi tiết món ăn */}
         <Route path="/cuisine/:id" element={<CulinaryDetail />} />
 
         {/* Trang admin - danh sách món ăn */}
-        <Route path="/admin/foods" element={
-          <AdminLayout>
-              <FoodList />
-            </AdminLayout>}/>
-        {/* Trang admin - thêm ẩm thực */}
-        <Route path="/admin/foods/create" element={
-          <AdminLayout>
-              <FoodCreate />
-            </AdminLayout>}/>
-        {/* Trang admin - sửa ẩm thực */}
-        <Route path="/admin/foods/:id/edit" element={
-           <AdminLayout>
-              <FoodEdit />
-            </AdminLayout>}/>
-        {/* Trang admin - danh mục */}
-        <Route path="/admin/categories" element={
-           <AdminLayout>
-              <CategoryList />
-            </AdminLayout>}/>
+        <Route path="/admin/foods" element={<AdminLayout><FoodList /></AdminLayout>} />
+        <Route path="/admin/foods/create" element={<AdminLayout><FoodCreate /></AdminLayout>} />
+        <Route path="/admin/foods/:id/edit" element={<AdminLayout><FoodEdit /></AdminLayout>} />
+        <Route path="/admin/categories" element={<AdminLayout><CategoryList /></AdminLayout>} />
+
         {/* Trang review */}
         <Route path="/review" element={<ReviewPage />} />
+
         {/* Trang Hotel */}
         <Route path="/hotels/:id" element={<HotelDetailPage />} />
 
@@ -287,41 +184,11 @@ function App() {
         <Route path="/schedule" element={<SchedulePage />} />
 
         {/* ===== ADMIN - Restaurant ===== */}
-        {/* Trang Danh sách Nhà Hành */}
         <Route path="/restaurants" element={<RestaurantList />} />
-
-        {/* Trang Chi Tiết Nhà Hàng */}
         <Route path="/restaurants/:id" element={<RestaurantDetail />} />
-
-        {/* Trang Danh sách Nhà Hàng (Admin) */}
-        <Route
-          path="/admin/Restaurant"
-          element={
-            <AdminLayout>
-              <RestaurantManagement />
-            </AdminLayout>
-          }
-        />
-
-        {/* Trang Chi Tiết Nhà Hàng (Admin) */}
-        <Route
-          path="/admin/EditRestaurant/:id"
-          element={
-            <AdminLayout>
-              <EditRestaurant />
-            </AdminLayout>
-          }
-        />
-
-        {/* Trang Thêm Nhà Hàng (Admin) */}
-        <Route
-          path="/admin/AddRestaurant"
-          element={
-            <AdminLayout>
-              <AddRestaurant />
-            </AdminLayout>
-          }
-        />
+        <Route path="/admin/Restaurant" element={<AdminLayout><RestaurantManagement /></AdminLayout>} />
+        <Route path="/admin/EditRestaurant/:id" element={<AdminLayout><EditRestaurant /></AdminLayout>} />
+        <Route path="/admin/AddRestaurant" element={<AdminLayout><AddRestaurant /></AdminLayout>} />
       </Routes>
     </Router>
   );
